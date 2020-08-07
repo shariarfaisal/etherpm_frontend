@@ -1,0 +1,26 @@
+$font-lato: 'Lato', sans-serif;
+$font-nunito: 'Nunito', sans-serif;
+$font-ubuntu: 'Ubuntu', sans-serif;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body{
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+
+body{
+  font-family: "Lato",sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+}

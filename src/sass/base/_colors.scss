@@ -1,0 +1,554 @@
+
+$red-lighten-5: #ffebee; // red lighten-5
+$red-lighten-4: #ffcdd2; // red lighten-4
+$red-lighten-3: #ef9a9a; // red lighten-3
+$red-lighten-2: #e57373; // red lighten-2
+$red-lighten-1: #ef5350; // red lighten-1
+$red:           #f44336; // red
+$red-darken-1:  #e53935; // red darken-1
+$red-darken-2:  #d32f2f; // red darken-2
+$red-darken-3:  #c62828; // red darken-3
+$red-darken-4:  #b71c1c; // red darken-4
+$red-accent-1:  #ff8a80; // red accent-1
+$red-accent-2:  #ff5252; // red accent-2
+$red-accent-3:  #ff1744; // red accent-3
+$red-accent-4:  #d50000; // red accent-4
+
+.red-l-5{background: $red-lighten-5;}
+.red-l-4{background: $red-lighten-4;}
+.red-l-3{background: $red-lighten-3;}
+.red-l-2{background: $red-lighten-2;}
+.red-l-1{background: $red-lighten-1;}
+.red    {background: $red;}
+.red-d-1{background: $red-darken-1;}
+.red-d-2{background: $red-darken-2;}
+.red-d-3{background: $red-darken-3;}
+.red-d-4{background: $red-darken-4;}
+.red-a-1{background: $red-accent-1;}
+.red-a-2{background: $red-accent-2;}
+.red-a-3{background: $red-accent-3;}
+.red-a-4{background: $red-accent-4;}
+
+.text-red-l{color: $red-lighten-1;}
+.text-red  {color: $red;}
+.text-red-d{color: $red-darken-4;}
+
+$pink-lighten-5: #fce4ec; // pink lighten-5
+$pink-lighten-4: #f8bbd0; // pink lighten-4
+$pink-lighten-3: #f48fb1; // pink lighten-3
+$pink-lighten-2: #f06292; // pink lighten-2
+$pink-lighten-1: #ec407a; // pink lighten-1
+$pink:           #e91e63; // pink
+$pink-darken-1:  #d81b60; // pink darken-1
+$pink-darken-2:  #c2185b; // pink darken-2
+$pink-darken-3:  #ad1457; // pink darken-3
+$pink-darken-4:  #880e4f; // pink darken-4
+$pink-accent-1:  #ff80ab; // pink accent-1
+$pink-accent-2:  #ff4081; // pink accent-2
+$pink-accent-3:  #f50057; // pink accent-3
+$pink-accent-4:  #c51162; // pink accent-4
+
+.pink-l-5{background: $pink-lighten-5;}
+.pink-l-4{background: $pink-lighten-4;}
+.pink-l-3{background: $pink-lighten-3;}
+.pink-l-2{background: $pink-lighten-2;}
+.pink-l-1{background: $pink-lighten-1;}
+.pink    {background: $pink;}
+.pink-d-1{background: $pink-darken-1;}
+.pink-d-2{background: $pink-darken-2;}
+.pink-d-3{background: $pink-darken-3;}
+.pink-d-4{background: $pink-darken-4;}
+.pink-a-1{background: $pink-accent-1;}
+.pink-a-2{background: $pink-accent-2;}
+.pink-a-3{background: $pink-accent-3;}
+.pink-a-4{background: $pink-accent-4;}
+
+.text-pink-l{color: $pink-lighten-1;}
+.text-pink  {color: $pink;}
+.text-pink-d{color: $pink-darken-4;}
+
+
+$purple-lighten-5: #f3e5f5; // purple lighten-5
+$purple-lighten-4: #e1bee7; // purple lighten-4
+$purple-lighten-3: #ce93d8; // purple lighten-3
+$purple-lighten-2: #ba68c8; // purple lighten-2
+$purple-lighten-1: #ab47bc; // purple lighten-1
+$purple:           #9c27b0; // purple
+$purple-darken-1:  #8e24aa; // purple darken-1
+$purple-darken-2:  #7b1fa2; // purple darken-2
+$purple-darken-3:  #6a1b9a; // purple darken-3
+$purple-darken-4:  #4a148c; // purple darken-4
+$purple-accent-1:  #ea80fc; // purple accent-1
+$purple-accent-2:  #e040fb; // purple accent-2
+$purple-accent-3:  #d500f9; // purple accent-3
+$purple-accent-4:  #aa00ff; // purple accent-4
+
+.purple-l-5{background: $purple-lighten-5;}
+.purple-l-4{background: $purple-lighten-4;}
+.purple-l-3{background: $purple-lighten-3;}
+.purple-l-2{background: $purple-lighten-2;}
+.purple-l-1{background: $purple-lighten-1;}
+.purple    {background: $purple;}
+.purple-d-1{background: $purple-darken-1;}
+.purple-d-2{background: $purple-darken-2;}
+.purple-d-3{background: $purple-darken-3;}
+.purple-d-4{background: $purple-darken-4;}
+.purple-a-1{background: $purple-accent-1;}
+.purple-a-2{background: $purple-accent-2;}
+.purple-a-3{background: $purple-accent-3;}
+.purple-a-4{background: $purple-accent-4;}
+
+
+.text-purple-l{color: $purple-lighten-1;}
+.text-purple  {color: $purple;}
+.text-purple-d{color: $purple-darken-4;}
+
+
+$deep-purple-lighten-5: #ede7f6; // deep-purple lighten-5
+$deep-purple-lighten-4: #d1c4e9; // deep-purple lighten-4
+$deep-purple-lighten-3: #b39ddb; // deep-purple lighten-3
+$deep-purple-lighten-2: #9575cd; // deep-purple lighten-2
+$deep-purple-lighten-1: #7e57c2; // deep-purple lighten-1
+$deep-purple:           #673ab7; // deep-purple
+$deep-purple-darken-1:  #5e35b1; // deep-purple darken-1
+$deep-purple-darken-2:  #512da8; // deep-purple darken-2
+$deep-purple-darken-3:  #4527a0; // deep-purple darken-3
+$deep-purple-darken-4:  #311b92; // deep-purple darken-4
+$deep-purple-accent-1:  #b388ff; // deep-purple accent-1
+$deep-purple-accent-2:  #7c4dff; // deep-purple accent-2
+$deep-purple-accent-3:  #651fff; // deep-purple accent-3
+$deep-purple-accent-4:  #6200ea; // deep-purple accent-4
+
+.deep-purple-l-5{background: $deep-purple-lighten-5;}
+.deep-purple-l-4{background: $deep-purple-lighten-4;}
+.deep-purple-l-3{background: $deep-purple-lighten-3;}
+.deep-purple-l-2{background: $deep-purple-lighten-2;}
+.deep-purple-l-1{background: $deep-purple-lighten-1;}
+.deep-purple    {background: $deep-purple;}
+.deep-purple-d-1{background: $deep-purple-darken-1;}
+.deep-purple-d-2{background: $deep-purple-darken-2;}
+.deep-purple-d-3{background: $deep-purple-darken-3;}
+.deep-purple-d-4{background: $deep-purple-darken-4;}
+.deep-purple-a-1{background: $deep-purple-accent-1;}
+.deep-purple-a-2{background: $deep-purple-accent-2;}
+.deep-purple-a-3{background: $deep-purple-accent-3;}
+.deep-purple-a-4{background: $deep-purple-accent-4;}
+
+.text-deep-purple-l{color: $deep-purple-lighten-1;}
+.text-deep-purple  {color: $deep-purple;}
+.text-deep-purple-d{color: $deep-purple-darken-4;}
+
+
+$indigo-lighten-5: #e8eaf6; // indigo lighten-5
+$indigo-lighten-4: #c5cae9; // indigo lighten-4
+$indigo-lighten-3: #9fa8da; // indigo lighten-3
+$indigo-lighten-2: #7986cb; // indigo lighten-2
+$indigo-lighten-1: #5c6bc0; // indigo lighten-1
+$indigo:           #3f51b5; // indigo
+$indigo-darken-1:  #3949ab; // indigo darken-1
+$indigo-darken-2:  #303f9f; // indigo darken-2
+$indigo-darken-3:  #283593; // indigo darken-3
+$indigo-darken-4:  #1a237e; // indigo darken-4
+$indigo-accent-1:  #8c9eff; // indigo accent-1
+$indigo-accent-2:  #536dfe; // indigo accent-2
+$indigo-accent-3:  #3d5afe; // indigo accent-3
+$indigo-accent-4:  #304ffe; // indigo accent-4
+
+
+.indigo-l-5{background: $indigo-lighten-5;}
+.indigo-l-4{background: $indigo-lighten-4;}
+.indigo-l-3{background: $indigo-lighten-3;}
+.indigo-l-2{background: $indigo-lighten-2;}
+.indigo-l-1{background: $indigo-lighten-1;}
+.indigo    {background: $indigo;}
+.indigo-d-1{background: $indigo-darken-1;}
+.indigo-d-2{background: $indigo-darken-2;}
+.indigo-d-3{background: $indigo-darken-3;}
+.indigo-d-4{background: $indigo-darken-4;}
+.indigo-a-1{background: $indigo-accent-1;}
+.indigo-a-2{background: $indigo-accent-2;}
+.indigo-a-3{background: $indigo-accent-3;}
+.indigo-a-4{background: $indigo-accent-4;}
+
+.text-indigo-l{color: $indigo-lighten-1;}
+.text-indigo  {color: $indigo;}
+.text-indigo-d{color: $indigo-darken-4;}
+
+
+$blue-lighten-5: #e3f2fd; // blue lighten-5
+$blue-lighten-4: #bbdefb; // blue lighten-4
+$blue-lighten-3: #90caf9; // blue lighten-3
+$blue-lighten-2: #64b5f6; // blue lighten-2
+$blue-lighten-1: #42a5f5; // blue lighten-1
+$blue:           #2196f3; // blue
+$blue-darken-1:  #1e88e5; // blue darken-1
+$blue-darken-2:  #1976d2; // blue darken-2
+$blue-darken-3:  #1565c0; // blue darken-3
+$blue-darken-4:  #0d47a1; // blue darken-4
+$blue-accent-1:  #82b1ff; // blue accent-1
+$blue-accent-2:  #448aff; // blue accent-2
+$blue-accent-3:  #2979ff; // blue accent-3
+$blue-accent-4:  #2962ff; // blue accent-4
+
+.text-blue-l{color: $blue-lighten-1;}
+.text-blue  {color: $blue;}
+.text-blue-d{color: $blue-darken-4;}
+
+.blue-l-5{background: $blue-lighten-5;}
+.blue-l-4{background: $blue-lighten-4;}
+.blue-l-3{background: $blue-lighten-3;}
+.blue-l-2{background: $blue-lighten-2;}
+.blue-l-1{background: $blue-lighten-1;}
+.blue    {background: $blue;}
+.blue-d-1{background: $blue-darken-1;}
+.blue-d-2{background: $blue-darken-2;}
+.blue-d-3{background: $blue-darken-3;}
+.blue-d-4{background: $blue-darken-4;}
+.blue-a-1{background: $blue-accent-1;}
+.blue-a-2{background: $blue-accent-2;}
+.blue-a-3{background: $blue-accent-3;}
+.blue-a-4{background: $blue-accent-4;}
+
+
+
+$light-blue-lighten-5: #e1f5fe; // light-blue lighten-5
+$light-blue-lighten-4: #b3e5fc; // light-blue lighten-4
+$light-blue-lighten-3: #81d4fa; // light-blue lighten-3
+$light-blue-lighten-2: #4fc3f7; // light-blue lighten-2
+$light-blue-lighten-1: #29b6f6; // light-blue lighten-1
+$light-blue:           #03a9f4; // light-blue
+$light-blue-darken-1:  #039be5; // light-blue darken-1
+$light-blue-darken-2:  #0288d1; // light-blue darken-2
+$light-blue-darken-3:  #0277bd; // light-blue darken-3
+$light-blue-darken-4:  #01579b; // light-blue darken-4
+$light-blue-accent-1:  #80d8ff; // light-blue accent-1
+$light-blue-accent-2:  #40c4ff; // light-blue accent-2
+$light-blue-accent-3:  #00b0ff; // light-blue accent-3
+$light-blue-accent-4:  #0091ea; // light-blue accent-4
+
+
+.light-blue-l-5{background: $light-blue-lighten-5;}
+.light-blue-l-4{background: $light-blue-lighten-4;}
+.light-blue-l-3{background: $light-blue-lighten-3;}
+.light-blue-l-2{background: $light-blue-lighten-2;}
+.light-blue-l-1{background: $light-blue-lighten-1;}
+.light-blue    {background: $light-blue;}
+.light-blue-d-1{background: $light-blue-darken-1;}
+.light-blue-d-2{background: $light-blue-darken-2;}
+.light-blue-d-3{background: $light-blue-darken-3;}
+.light-blue-d-4{background: $light-blue-darken-4;}
+.light-blue-a-1{background: $light-blue-accent-1;}
+.light-blue-a-2{background: $light-blue-accent-2;}
+.light-blue-a-3{background: $light-blue-accent-3;}
+.light-blue-a-4{background: $light-blue-accent-4;}
+
+.text-light-blue-l{color: $light-blue-lighten-1;}
+.text-light-blue  {color: $light-blue;}
+.text-light-blue-d{color: $light-blue-darken-4;}
+
+$cyan-lighten-5: #e0f7fa; // cyan lighten-5
+$cyan-lighten-4: #b2ebf2; // cyan lighten-4
+$cyan-lighten-3: #80deea; // cyan lighten-3
+$cyan-lighten-2: #4dd0e1; // cyan lighten-2
+$cyan-lighten-1: #26c6da; // cyan lighten-1
+$cyan:           #00bcd4; // cyan
+$cyan-darken-1:  #00acc1; // cyan darken-1
+$cyan-darken-2:  #0097a7; // cyan darken-2
+$cyan-darken-3:  #00838f; // cyan darken-3
+$cyan-darken-4:  #006064; // cyan darken-4
+$cyan-accent-1:  #84ffff; // cyan accent-1
+$cyan-accent-2:  #18ffff; // cyan accent-2
+$cyan-accent-3:  #00e5ff; // cyan accent-3
+$cyan-accent-4:  #00b8d4; // cyan accent-4
+
+.cyan-l-5{background: $cyan-lighten-5;}
+.cyan-l-4{background: $cyan-lighten-4;}
+.cyan-l-3{background: $cyan-lighten-3;}
+.cyan-l-2{background: $cyan-lighten-2;}
+.cyan-l-1{background: $cyan-lighten-1;}
+.cyan    {background: $cyan;}
+.cyan-d-1{background: $cyan-darken-1;}
+.cyan-d-2{background: $cyan-darken-2;}
+.cyan-d-3{background: $cyan-darken-3;}
+.cyan-d-4{background: $cyan-darken-4;}
+.cyan-a-1{background: $cyan-accent-1;}
+.cyan-a-2{background: $cyan-accent-2;}
+.cyan-a-3{background: $cyan-accent-3;}
+.cyan-a-4{background: $cyan-accent-4;}
+
+.text-cyan-l{color: $cyan-lighten-1;}
+.text-cyan  {color: $cyan;}
+.text-cyan-d{color: $cyan-darken-4;}
+
+$teal-lighten-5: #e0f2f1; // teal lighten-5
+$teal-lighten-4: #b2dfdb; // teal lighten-4
+$teal-lighten-3: #80cbc4; // teal lighten-3
+$teal-lighten-2: #4db6ac; // teal lighten-2
+$teal-lighten-1: #26a69a; // teal lighten-1
+$teal:           #009688; // teal
+$teal-darken-1:  #00897b; // teal darken-1
+$teal-darken-2:  #00796b; // teal darken-2
+$teal-darken-3:  #00695c; // teal darken-3
+$teal-darken-4:  #004d40; // teal darken-4
+$teal-accent-1:  #a7ffeb; // teal accent-1
+$teal-accent-2:  #64ffda; // teal accent-2
+$teal-accent-3:  #1de9b6; // teal accent-3
+$teal-accent-4:  #00bfa5; // teal accent-4
+
+
+.teal-l-5{background: $teal-lighten-5;}
+.teal-l-4{background: $teal-lighten-4;}
+.teal-l-3{background: $teal-lighten-3;}
+.teal-l-2{background: $teal-lighten-2;}
+.teal-l-1{background: $teal-lighten-1;}
+.teal    {background: $teal;}
+.teal-d-1{background: $teal-darken-1;}
+.teal-d-2{background: $teal-darken-2;}
+.teal-d-3{background: $teal-darken-3;}
+.teal-d-4{background: $teal-darken-4;}
+.teal-a-1{background: $teal-accent-1;}
+.teal-a-2{background: $teal-accent-2;}
+.teal-a-3{background: $teal-accent-3;}
+.teal-a-4{background: $teal-accent-4;}
+
+.text-teal-l{color: $teal-lighten-1;}
+.text-teal{color: $teal;}
+.text-teal-d{color: $teal-darken-4;}
+
+
+$green-lighten-5: #e8f5e9; // green lighten-5
+$green-lighten-4: #c8e6c9; // green lighten-4
+$green-lighten-3: #a5d6a7; // green lighten-3
+$green-lighten-2: #81c784; // green lighten-2
+$green-lighten-1: #66bb6a; // green lighten-1
+$green:           #4caf50; // green
+$green-darken-1:  #43a047; // green darken-1
+$green-darken-2:  #388e3c; // green darken-2
+$green-darken-3:  #2e7d32; // green darken-3
+$green-darken-4:  #1b5e20; // green darken-4
+$green-accent-1:  #b9f6ca; // green accent-1
+$green-accent-2:  #69f0ae; // green accent-2
+$green-accent-3:  #00e676; // green accent-3
+$green-accent-4:  #00c853; // green accent-4
+
+.green-l-5{background: $green-lighten-5;}
+.green-l-4{background: $green-lighten-4;}
+.green-l-3{background: $green-lighten-3;}
+.green-l-2{background: $green-lighten-2;}
+.green-l-1{background: $green-lighten-1;}
+.green    {background: $green;}
+.green-d-1{background: $green-darken-1;}
+.green-d-2{background: $green-darken-2;}
+.green-d-3{background: $green-darken-3;}
+.green-d-4{background: $green-darken-4;}
+.green-a-1{background: $green-accent-1;}
+.green-a-2{background: $green-accent-2;}
+.green-a-3{background: $green-accent-3;}
+.green-a-4{background: $green-accent-4;}
+
+.text-green-l{color: $green-lighten-1;}
+.text-green  {color: $green;}
+.text-green-d{color: $green-darken-4;}
+
+
+$light-green-lighten-5: #f1f8e9; // light-green lighten-5
+$light-green-lighten-4: #dcedc8; // light-green lighten-4
+$light-green-lighten-3: #c5e1a5; // light-green lighten-3
+$light-green-lighten-2: #aed581; // light-green lighten-2
+$light-green-lighten-1: #9ccc65; // light-green lighten-1
+$light-green:           #8bc34a; // light-green
+$light-green-darken-1:  #7cb342; // light-green darken-1
+$light-green-darken-2:  #689f38; // light-green darken-2
+$light-green-darken-3:  #558b2f; // light-green darken-3
+$light-green-darken-4:  #33691e; // light-green darken-4
+$light-green-accent-1:  #ccff90; // light-green accent-1
+$light-green-accent-2:  #b2ff59; // light-green accent-2
+$light-green-accent-3:  #76ff03; // light-green accent-3
+$light-green-accent-4:  #64dd17; // light-green accent-4
+
+
+.light-green-l-5{background: $light-green-lighten-5;}
+.light-green-l-4{background: $light-green-lighten-4;}
+.light-green-l-3{background: $light-green-lighten-3;}
+.light-green-l-2{background: $light-green-lighten-2;}
+.light-green-l-1{background: $light-green-lighten-1;}
+.light-green    {background: $light-green;}
+.light-green-d-1{background: $light-green-darken-1;}
+.light-green-d-2{background: $light-green-darken-2;}
+.light-green-d-3{background: $light-green-darken-3;}
+.light-green-d-4{background: $light-green-darken-4;}
+.light-green-a-1{background: $light-green-accent-1;}
+.light-green-a-2{background: $light-green-accent-2;}
+.light-green-a-3{background: $light-green-accent-3;}
+.light-green-a-4{background: $light-green-accent-4;}
+
+.text-light-green-l{color: $light-green-lighten-1;}
+.text-light-green  {color: $light-green;}
+.text-light-green-d{color: $light-green-darken-4;}
+
+
+$lime-lighten-5: #f9fbe7; // lime lighten-5
+$lime-lighten-4: #f0f4c3; // lime lighten-4
+$lime-lighten-3: #e6ee9c; // lime lighten-3
+$lime-lighten-2: #dce775; // lime lighten-2
+$lime-lighten-1: #d4e157; // lime lighten-1
+$lime:           #cddc39; // lime
+$lime-darken-1:  #c0ca33; // lime darken-1
+$lime-darken-2:  #afb42b; // lime darken-2
+$lime-darken-3:  #9e9d24; // lime darken-3
+$lime-darken-4:  #827717; // lime darken-4
+$lime-accent-1:  #f4ff81; // lime accent-1
+$lime-accent-2:  #eeff41; // lime accent-2
+$lime-accent-3:  #c6ff00; // lime accent-3
+$lime-accent-4:  #aeea00; // lime accent-4
+
+
+.lime-l-5{background: $lime-lighten-5;}
+.lime-l-4{background: $lime-lighten-4;}
+.lime-l-3{background: $lime-lighten-3;}
+.lime-l-2{background: $lime-lighten-2;}
+.lime-l-1{background: $lime-lighten-1;}
+.lime    {background: $lime;}
+.lime-d-1{background: $lime-darken-1;}
+.lime-d-2{background: $lime-darken-2;}
+.lime-d-3{background: $lime-darken-3;}
+.lime-d-4{background: $lime-darken-4;}
+.lime-a-1{background: $lime-accent-1;}
+.lime-a-2{background: $lime-accent-2;}
+.lime-a-3{background: $lime-accent-3;}
+.lime-a-4{background: $lime-accent-4;}
+
+.text-lime-l{color: $lime-lighten-1;}
+.text-lime  {color: $lime;}
+.text-lime-d{color: $lime-darken-4;}
+
+
+
+$yellow-lighten-5: #fffde7; // yellow lighten-5
+$yellow-lighten-4: #fff9c4; // yellow lighten-4
+$yellow-lighten-3: #fff59d; // yellow lighten-3
+$yellow-lighten-2: #fff176; // yellow lighten-2
+$yellow-lighten-1: #ffee58; // yellow lighten-1
+$yellow:           #ffeb3b; // yellow
+$yellow-darken-1:  #fdd835; // yellow darken-1
+$yellow-darken-2:  #fbc02d; // yellow darken-2
+$yellow-darken-3:  #f9a825; // yellow darken-3
+$yellow-darken-4:  #f57f17; // yellow darken-4
+$yellow-accent-1:  #ffff8d; // yellow accent-1
+$yellow-accent-2:  #ffff00; // yellow accent-2
+$yellow-accent-3:  #ffea00; // yellow accent-3
+$yellow-accent-4:  #ffd600; // yellow accent-4
+
+
+.yellow-l-5{background: $yellow-lighten-5;}
+.yellow-l-4{background: $yellow-lighten-4;}
+.yellow-l-3{background: $yellow-lighten-3;}
+.yellow-l-2{background: $yellow-lighten-2;}
+.yellow-l-1{background: $yellow-lighten-1;}
+.yellow    {background: $yellow;}
+.yellow-d-1{background: $yellow-darken-1;}
+.yellow-d-2{background: $yellow-darken-2;}
+.yellow-d-3{background: $yellow-darken-3;}
+.yellow-d-4{background: $yellow-darken-4;}
+.yellow-a-1{background: $yellow-accent-1;}
+.yellow-a-2{background: $yellow-accent-2;}
+.yellow-a-3{background: $yellow-accent-3;}
+.yellow-a-4{background: $yellow-accent-4;}
+
+
+.text-yellow-l{color: $yellow-lighten-1;}
+.text-yellow  {color: $yellow;}
+.text-yellow-d{color: $yellow-darken-4;}
+
+$grey-lighten-5: #fafafa; // grey lighten-5
+$grey-lighten-4: #f5f5f5; // grey lighten-4
+$grey-lighten-3: #eeeeee; // grey lighten-3
+$grey-lighten-2: #e0e0e0; // grey lighten-2
+$grey-lighten-1: #bdbdbd; // grey lighten-1
+$grey:           #9e9e9e; // grey
+$grey-darken-1:  #757575; // grey darken-1
+$grey-darken-2:  #616161; // grey darken-2
+$grey-darken-3:  #424242; // grey darken-3
+$grey-darken-4:  #212121; // grey darken-4
+
+
+.grey-l-5{background: $grey-lighten-5;}
+.grey-l-4{background: $grey-lighten-4;}
+.grey-l-3{background: $grey-lighten-3;}
+.grey-l-2{background: $grey-lighten-2;}
+.grey-l-1{background: $grey-lighten-1;}
+.grey    {background: $grey;}
+.grey-d-1{background: $grey-darken-1;}
+.grey-d-2{background: $grey-darken-2;}
+.grey-d-3{background: $grey-darken-3;}
+.grey-d-4{background: $grey-darken-4;}
+
+.text-grey-l{color: $grey-lighten-1;}
+.text-grey  {color: $grey;}
+.text-grey-d{color: $grey-darken-4;}
+
+
+$brown-lighten-5: #efebe9; // brown lighten-5
+$brown-lighten-4: #d7ccc8; // brown lighten-4
+$brown-lighten-3: #bcaaa4; // brown lighten-3
+$brown-lighten-2: #a1887f; // brown lighten-2
+$brown-lighten-1: #8d6e63; // brown lighten-1
+$brown:           #795548; // brown
+$brown-darken-1:  #6d4c41; // brown darken-1
+$brown-darken-2:  #5d4037; // brown darken-2
+$brown-darken-3:  #4e342e; // brown darken-3
+$brown-darken-4:  #3e2723; // brown darken-4
+
+
+.brown-l-5{background: $brown-lighten-5;}
+.brown-l-4{background: $brown-lighten-4;}
+.brown-l-3{background: $brown-lighten-3;}
+.brown-l-2{background: $brown-lighten-2;}
+.brown-l-1{background: $brown-lighten-1;}
+.brown    {background: $brown;}
+.brown-d-1{background: $brown-darken-1;}
+.brown-d-2{background: $brown-darken-2;}
+.brown-d-3{background: $brown-darken-3;}
+.brown-d-4{background: $brown-darken-4;}
+
+.text-brown-l{color: $brown-lighten-1;}
+.text-brown  {color: $brown;}
+.text-brown-d{color: $brown-darken-4;}
+
+
+$blue-grey-lighten-5: #eceff1; // blue-grey lighten-5
+$blue-grey-lighten-4: #cfd8dc; // blue-grey lighten-4
+$blue-grey-lighten-3: #b0bec5; // blue-grey lighten-3
+$blue-grey-lighten-2: #90a4ae; // blue-grey lighten-2
+$blue-grey-lighten-1: #78909c; // blue-grey lighten-1
+$blue-grey:           #607d8b; // blue-grey
+$blue-grey-darken-1:  #546e7a; // blue-grey darken-1
+$blue-grey-darken-2:  #455a64; // blue-grey darken-2
+$blue-grey-darken-3:  #37474f; // blue-grey darken-3
+$blue-grey-darken-4:  #263238; // blue-grey darken-4
+
+
+.blue-grey-l-5{background: $blue-grey-lighten-5;}
+.blue-grey-l-4{background: $blue-grey-lighten-4;}
+.blue-grey-l-3{background: $blue-grey-lighten-3;}
+.blue-grey-l-2{background: $blue-grey-lighten-2;}
+.blue-grey-l-1{background: $blue-grey-lighten-1;}
+.blue-grey    {background: $blue-grey;}
+.blue-grey-d-1{background: $blue-grey-darken-1;}
+.blue-grey-d-2{background: $blue-grey-darken-2;}
+.blue-grey-d-3{background: $blue-grey-darken-3;}
+.blue-grey-d-4{background: $blue-grey-darken-4;}
+
+.text-blue-grey-l{color: $blue-grey-lighten-1;}
+.text-blue-grey  {color: $blue-grey;}
+.text-blue-grey-d{color: $blue-grey-darken-4;}
+
+$black: #000000; // black
+$white: #ffffff; // white
+
+
+.black{background: $black;}
+.text-black{color: $black;}
+
+.white{background: $white;}
+.text-white{color: $white;}

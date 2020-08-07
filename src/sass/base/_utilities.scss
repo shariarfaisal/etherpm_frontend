@@ -1,0 +1,21 @@
+.flex-center{display: flex;justify-content: center;align-items: center;}
+.pointer{cursor: pointer;}
+.font-6{font-weight: 600;}
+
+
+.customScroll{
+  overflow-y: auto;
+}
+
+.customScroll::-webkit-scrollbar {
+  background: #cccccc;
+  width: 6px;
+}
+
+.customScroll::-webkit-scrollbar-track {
+  background: #f7f7f7;
+}
+
+.customScroll::-webkit-scrollbar-thumb {
+  background: #cccccc;
+}

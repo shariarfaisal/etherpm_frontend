@@ -4,6 +4,7 @@ import Market from '../components/market/Market'
 import Capabilities from '../components/capabilities/Capabilities'
 import Benefits from '../components/benefits/Benefits'
 
+
 const Home = (props) => {
   return(
     <Layout>

@@ -1,36 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import LoginForm from './LoginForm'
+
 
 const Login = (props) => {
+
   return(
     <LoginStyle className="login">
       <div className="wrapper">
         <div className="row justify-content-center align-items-center mx-0">
 
-          {/* Form Container */}
-          <form className="form col-sm-8 col-md-5 col-lg-4 col-xl-3 rounded">
-            <h2 className="text-center py-2">Log In</h2>
-            {/* Error Message */}
-            <div className="py-3 text-center text-danger border bg-light rounded">Invalid Cridential!</div>
-
-            <div className="form-group mb-5 mt-3">
-              <label htmlFor="email">Email</label>
-              <input id="email" className="form-control" type="email" placeholder="Email" />
-            </div>
-            <div className="form-group mb-5">
-              <label htmlFor="password">Password</label>
-              <input id="password" className="form-control" type="password" placeholder="Password" />
-            </div>
-            <div>
-              <button className="btn btn-lg btn-block btn-info" type="button">Log In</button>
-              <div className="foot my-3 d-flex justify-content-between">
-                <span className="forgot">Forgot Password?</span>
-                <div className="no-account text-muted">Have no account yet? <Link to="/register" className="text-warning"> Register</Link></div>
-              </div>
-            </div>
-          </form>
-
+          <LoginForm />
 
         </div>
       </div>
@@ -45,6 +25,10 @@ const LoginStyle = styled.div`
     padding: 3rem 3rem 5rem 3rem;
     margin: 8rem 0 5rem 0;
     box-shadow: 0 2px 7px #c9c9c9;
+
+    label{
+      font-size: 1.2rem;
+    }
 
     .foot{
       font-size: 1.3rem;
@@ -66,8 +50,14 @@ const LoginStyle = styled.div`
     }
   }
   .form-control{
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     height: 4rem;
+    border-color: #e2e2e2d4;
+
+    &:focus{
+      box-shadow: none;
+      border-color: #00c5df !important;
+    }
   }
 
   .btn{

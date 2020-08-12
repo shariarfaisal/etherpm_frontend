@@ -1,4 +1,4 @@
-import React,{ Fragment, useEffect } from 'react'
+import React,{ Fragment } from 'react'
 import Header from './header/Header'
 import Intro from './Intro'
 import FooterBox from './footerBox/FooterBox'
@@ -8,14 +8,7 @@ import UserContextProvider from '../../contexts/UserContext'
 
 
 const Layout = ({ children }) => {
-  const { location, push } = useHistory()
-
-  useEffect(() => {
-    const token = localStorage.getItem('etherpm_user_token')
-    if(!token){
-      push('/login')
-    }
-  },[])
+  const { location } = useHistory()
 
   return(
     <UserContextProvider>

@@ -13,8 +13,6 @@ if(token){
   tokenHandler(token)
 }
 
-export default tokenHandler
-
 ReactDOM.render(
   <App />,
    document.getElementById('root')

@@ -10,22 +10,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 let pages = [
   {id: 1,path: '/',component: Home},
   {id: 2,path: '/profile',component: Profile},
-  {id: 2,path: '/tokenlisting',component: TokenListing},
-]
-
-let authPages = [
-  {id: 1,path: '/login',component: Login},
-  {id: 2,path: '/register',component: Register},
+  {id: 3,path: '/tokenlisting',component: TokenListing},
+  {id: 4,path: '/login',component: Login},
+  {id: 5,path: '/register',component: Register},
 ]
 
 
 const App = (props) => {
-
-  const token = localStorage.getItem('etherpm_user_token')
-  if(!token){
-    pages = authPages
-  }
-
   return(
     <Router>
       <Switch>

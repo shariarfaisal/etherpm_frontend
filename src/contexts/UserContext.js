@@ -11,7 +11,7 @@ const UserContextProvider = ({ children }) => {
   const signup = async (payloads) => {
     let [data,error] = [null,null]
     try{
-      const res = await axios.post(`http://localhost:1000/api/user/register`,payloads)
+      const res = await axios.post(`/api/user/register`,payloads)
       data = res.data
     }catch(err){
       error = err.response.data.error
@@ -22,7 +22,7 @@ const UserContextProvider = ({ children }) => {
   const login = async (payloads) => {
     let [data,error] = [null,null]
     try{
-      const res = await axios.post(`http://localhost:1000/api/user/login`,payloads)
+      const res = await axios.post(`/api/user/login`,payloads)
       data = res.data
     }catch(err){
       error = err.response.data.error
@@ -32,11 +32,34 @@ const UserContextProvider = ({ children }) => {
 
   const getProfile = async () => {
     try{
-      const get = await axios.get(`http://localhost:1000/api/user/profile`)
+      const get = await axios.get(`/api/user/profile`)
       setProfile(get.data)
     }catch(err){
       console.log(err.response.data);
     }
+  }
+
+  const getUpdateInfo = async (payloads) => {
+    let [data,error] = [null,null]
+    try{
+      const res = await axios.put(`/api/user/profile`,payloads)
+      data = res.data
+      setProfile({...res.data})
+    }catch(err){
+      error = err.response.data.error
+    }
+    return { data, error }
+  }
+
+  const getUpdatePassword = async (payloads) => {
+    let [data,error] = [null,null]
+    try{
+      const res = await axios.put(`/api/user/password`,payloads)
+      data = res.data
+    }catch(err){
+      error = err.response.data.error
+    }
+    return { data, error }
   }
 
   useEffect(() => {
@@ -51,7 +74,9 @@ const UserContextProvider = ({ children }) => {
       signup,
       login,
       getProfile,
-      profile
+      profile,
+      getUpdateInfo,
+      getUpdatePassword
     }}>
       { children }
     </UserContext.Provider>

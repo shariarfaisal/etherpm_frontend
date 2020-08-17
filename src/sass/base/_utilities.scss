@@ -19,3 +19,29 @@
 .customScroll::-webkit-scrollbar-thumb {
   background: #cccccc;
 }
+
+.btn-loading{
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: inherit;
+
+  &::after {
+    animation: FBLoadShimmer-animate 1s steps(20, end) infinite forwards;
+    background-color: #f5f6f7;
+    background-image: linear-gradient( to right,#17a2b8 0%,#17a2b8b3 20%,#17a2b8 40%,#17a2b8 100% );
+    content: ' ';
+    display: block;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    will-change: transform;
+  }
+
+
+  @keyframes FBLoadShimmer-animate{
+    0%{transform:translateX(-100%)}
+    100%{transform:translateX(100%)}
+  }
+}

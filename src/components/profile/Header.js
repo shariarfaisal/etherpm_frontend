@@ -17,7 +17,7 @@ const Header = ({ profile }) => {
     <Styling className="col-12" style={{height: '80px',background: '#546e7a'}}>
       {profile ? <div className="text-light d-flex justify-content-between align-items-center">
       <div>
-        <p>{profile.data.email}</p>
+        <p>{profile.email}</p>
       </div>
 
       <div className="">

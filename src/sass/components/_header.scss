@@ -23,9 +23,9 @@
         font-size: 1.4rem;
         padding: 0 .5rem;
         box-sizing: border-box;
-        border-bottom: .15rem solid transparent;
+        cursor: pointer;
         &:hover{
-          border-color: #ffffff;
+          color: #ffffffb3;
         }
       }
     }
@@ -37,7 +37,7 @@
     }
     .dropdown-item{
       font-size: 1.4rem;
-      color: #fff;
+      color: #ffffff;
       text-align: center;
       cursor: pointer;
       &:hover{

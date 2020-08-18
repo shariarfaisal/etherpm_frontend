@@ -33,7 +33,7 @@ const UserContextProvider = ({ children }) => {
   const getProfile = async () => {
     try{
       const get = await axios.get(`/api/user/profile`)
-      setProfile(get.data)
+      setProfile(get.data.data)
     }catch(err){
       console.log(err.response.data);
     }
@@ -44,7 +44,7 @@ const UserContextProvider = ({ children }) => {
     try{
       const res = await axios.put(`/api/user/profile`,payloads)
       data = res.data
-      setProfile({...res.data})
+      setProfile({...res.data.data})
     }catch(err){
       error = err.response.data.error
     }

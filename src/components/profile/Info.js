@@ -6,7 +6,7 @@ import Trades from './trades/Trades'
 import TransactionHistory from './transactionHistory/TransactionHistory'
 import About from './settings/About'
 
-const pages = ['Wallet','Trades','OrderManagement','TransactionHistory','InviteFriends','Settings']
+const pages = ['Wallet','Trades','OrderManagement','TransactionHistory','InviteFriends','Settings','Refferal']
 
 const Info = (props) => {
   const [page,setPage] = useState('')
@@ -17,7 +17,7 @@ const Info = (props) => {
       const p = pages.find(i => i.toLowerCase() === tab.toLowerCase())
       setPage(p)
     }else{
-      setPage(pages[0])
+      changeURL(pages[0])
     }
   },[])
 
@@ -33,7 +33,7 @@ const Info = (props) => {
     <div className="profile" style={{fontFamily: 'ubuntu'}}>
       <div className="wrapper" style={{minHeight: '500px'}}>
         <div className="row mx-0 justify-content-between" style={{background: 'rgb(51 80 94)'}}>
-          <LeftMenu setPage={changeURL}/>
+          <LeftMenu page={page} setPage={changeURL}/>
           {page === 'Wallet' && <Wallet />}
           {page === 'OrderManagement' && <OrderManagement />}
           {page === 'Trades' && <Trades />}

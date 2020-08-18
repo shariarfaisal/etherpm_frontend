@@ -11,26 +11,35 @@ const SignupForm = (props) => {
   const [agreement,setAgreement] = useState(false)
   const [isReff,setIsReff] = useState(false)
   const [errors,setErrors] = useState('')
+  const [success,setSuccess] = useState('')
+  const [loading,setLoading] = useState(false)
   const history = useHistory()
 
   const submitHandler = async e => {
+    setErrors('')
+    setLoading(true)
     e.preventDefault()
     if(!agreement){
+      setLoading(false)
       setErrors({ agreement: 'Agreement mush have to be checked!'})
-      console.log(errors);
     }else{
+      setLoading(false)
       const { data, error } = await signup({name,email,password,refferalID})
       if(error) setErrors(error)
       else if(data){
-        history.push('/login')
+        setSuccess('Account created!')
+        setTimeout(() => {
+          history.push('/login')
+        },1000)
       }
     }
   }
 
   return(
-    <form onSubmit={submitHandler} className="form col-sm-8 col-md-5 col-lg-4 col-xl-3 rounded my-md-5 mx-md-0">
+    <form onSubmit={submitHandler} className={`form col-sm-8 col-md-5 col-lg-4 col-xl-3 rounded my-md-5 mx-md-0 ${loading ? 'btn-loading': ''}`}>
       <h1 className="text-center py-2 mb-2">Create a free account</h1>
       {errors.agreement && <span className="invalid text-danger text-center d-block">{errors.agreement}</span> }
+      {success && <span className="invalid text-success text-center d-block">{success}</span> }
       <div className="form-group  mt-3">
         <label htmlFor="name">Name</label>
         <input
@@ -89,14 +98,15 @@ const SignupForm = (props) => {
       <div className="form-group  d-flex align-items-center pl-3">
         <input
           type="checkbox"
+          value={agreement}
           onChange={e => setAgreement(!agreement)}
           className="form-check-input bg-warning"
           id="exampleCheck1"
         />
-        <label onClick={e => setAgreement(!agreement)} className="form-check-label ml-3" htmlFor="exampleCheck1">I agree with the <Link to="/termsandconditions" className="text-warning">Terms and Conditions</Link></label>
+        <label className="form-check-label ml-3" htmlFor="exampleCheck1">I agree with the <Link to="/termsandconditions" className="text-warning">Terms and Conditions</Link></label>
       </div>
       <div>
-        <button className="btn btn-lg btn-block btn-info" type="submit">Register</button>
+        <button disabled={loading} className="btn btn-lg btn-block btn-info" type="submit">Register</button>
         <div className="foot my-3 d-flex justify-content-between">
           <div className="text-muted">Already have an account? <Link to="/login" className="text-warning">Login</Link></div>
         </div>

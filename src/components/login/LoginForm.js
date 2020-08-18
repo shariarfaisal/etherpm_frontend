@@ -65,7 +65,7 @@ const LoginForm = (props) => {
         />
       </div>
       <div>
-        <button disabled={loading} className="btn btn-lg btn-block btn-info" type="submit">Log In</button>
+        <button disabled={loading} className="btn btn-lg btn-block btn-info" type="submit">Log In <i className="bx bx-log-in"></i></button>
         <div className="foot my-3 d-flex justify-content-between">
           <span className="forgot">Forgot Password?</span>
           <div className="no-account text-muted">Register <Link to="/register" className="text-warning">here</Link></div>

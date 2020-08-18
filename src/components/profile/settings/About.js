@@ -34,8 +34,8 @@ const About = (props) => {
         {profile && <div className="col-md-10 col-lg-8 row mx-0 text-light p-4 shadow rounded" style={{minHeight: '300px',background: '#41606E'}}>
 
           {!updateMode && <div className="info col-7 pt-5">
-            <h2><i style={{fontSize:'15px'}} className="fas fa-user mx-2 text-warning"></i>{profile.name}</h2>
-            <p><i style={{fontSize:'15px'}} className="fas fa-envelope mx-2 text-warning"></i>{profile.email}</p>
+            <h2><i style={{fontSize:'15px'}} className="bx bx-user mx-2 text-warning"></i>{profile.name}</h2>
+            <p><i style={{fontSize:'15px'}} className="bx bx-envelope mx-2 text-warning"></i>{profile.email}</p>
           </div>}
           {updateMode === 'info' && <UpdateInfo setUpdateMode={updateURL} profile={profile}/>}
           {updateMode === 'password' && <UpdatePassword setUpdateMode={updateURL} />}

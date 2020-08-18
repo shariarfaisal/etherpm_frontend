@@ -22,10 +22,10 @@ const RightUL = (props) => {
       </Fragment>}
       {token && <Fragment>
         <li className="nav-item">
-          <Link className="nav-link" to="/profile"><i className="fa fa-user"></i> Profile</Link>
+          <Link className="nav-link" to="/profile"><i className="bx bx-user"></i> Profile</Link>
         </li>
         <li className="nav-item">
-          <p onClick={getSignout} className="nav-link mb-0 pointer"><i className="fas fa-sign-out-alt"></i> signout</p>
+          <p onClick={getSignout} className="nav-link mb-0 pointer">signout<i className="bx bx-log-out"></i></p>
         </li>
       </Fragment>}
     </ul>

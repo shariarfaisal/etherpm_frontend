@@ -2,14 +2,13 @@ import React,{ useContext } from 'react'
 import styled from 'styled-components'
 import { UserContext } from '../../contexts/UserContext'
 
-
 const items = [
-  {id: 1,name: 'Wallet',icon: 'fas fa-wallet',title: 'Wallet'},
-  {id: 2,name: 'Trades',icon: 'fas fa-luggage-cart',title: 'Trades'},
-  {id: 3,name: 'OrderManagement',icon: 'fas fa-poll',title: 'Order Management'},
-  {id: 4,name: 'TransactionHistory',icon: 'fas fa-history',title: 'Transaction History'},
-  {id: 5,name: 'Settings',icon: 'fas fa-user-cog',title: 'Settings'},
-  {id: 6,name: 'Refferal',icon: 'fas fa-user-plus',title: 'Referral'}
+  {id: 1,name: 'Wallet',icon: 'bx bx-wallet-alt',title: 'Wallet'},
+  {id: 2,name: 'Trades',icon: 'bx bx-trending-up',title: 'Trades'},
+  {id: 3,name: 'OrderManagement',icon: 'bx bx-bar-chart-alt-2',title: 'Order Management'},
+  {id: 4,name: 'TransactionHistory',icon: 'bx bx-history',title: 'Transaction History'},
+  {id: 5,name: 'Settings',icon: 'bx bx-cog',title: 'Settings'},
+  {id: 6,name: 'Refferal',icon: 'bx bx-user-plus',title: 'Referral'}
 ]
 
 
@@ -17,7 +16,9 @@ const ListItem = ({ name, title, page, setPage, icon}) => {
   console.log(page,name);
   return(
     <li onClick={e => setPage(name)} className="nav-item">
-      <p className={`nav-link ${page === name ? 'active': ''}`}><i className={`${icon} mx-2`}></i>{title}</p>
+      <p className={`nav-link ${page === name ? 'active': ''}`}>
+        <i className={`${icon} mx-2`}></i>
+      {title}</p>
     </li>
   )
 }

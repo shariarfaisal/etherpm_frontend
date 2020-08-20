@@ -8,14 +8,18 @@ const UpdateInfo = ({ profile, setUpdateMode }) => {
   const [err,setErr] = useState('')
   const [success,setSuccess] = useState('')
   const { getUpdateInfo } = useContext(UserContext)
+  const [loading,setLoading] = useState(false)
 
   const submitHandler = async e => {
     e.preventDefault()
+    setLoading(true)
     const { error, data } = await getUpdateInfo({ name, email})
     if(error){
+      setLoading(false)
       console.log(error);
       setErr(error)
     }else if(data){
+      setLoading(false)
       setSuccess('Data updated successfully!')
     }
   }
@@ -58,8 +62,13 @@ const UpdateInfo = ({ profile, setUpdateMode }) => {
         <small style={{color: '#ff766c'}}>{err.email && err.email}</small>
         </div>
         <div className="d-flex justify-content-end mt-5">
-          <button onClick={e => setUpdateMode('')} type="button" className="px-3 mx-3 btn btn-warning">Cancel</button>
-          <button disabled={success} type="submit" className={`px-3 mx-3 btn btn-${success? 'success': 'info'}`}>{success ? 'Updated': 'Save'}</button>
+          <button onClick={e => setUpdateMode('')} type="button" className="px-4 mx-3 btn btn-warning btn-lg">Cancel</button>
+          <button
+            disabled={loading}
+            type="submit"
+            className={`px-4 mx-3 btn btn-${success? 'success': 'info'} btn-lg`}>
+            {success ? 'Updated': <span>Save {loading ? <i className="bx bx-loader-circle bx-spin"></i>: ''}</span>}
+          </button>
         </div>
       </form>
     </div>

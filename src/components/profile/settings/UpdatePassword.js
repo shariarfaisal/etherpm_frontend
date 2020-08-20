@@ -6,15 +6,18 @@ const UpdatePassword = ({ setUpdateMode }) => {
   const [newPassword,setNewPassword] = useState('')
   const [err,setErr] = useState('')
   const [success,setSuccess] = useState('')
+  const [loading,setLoading] = useState(false)
   const { getUpdatePassword } = useContext(UserContext)
 
   const submitHandler = async e => {
     e.preventDefault()
+    setLoading(true)
     const { error, data } = await getUpdatePassword({ password, newPassword})
     if(error){
-      console.log(error);
+      setLoading(false)
       setErr(error)
     }else if(data){
+      setLoading(false)
       setSuccess('Password updated!')
       setPassword('')
       setNewPassword('')
@@ -70,8 +73,13 @@ const UpdatePassword = ({ setUpdateMode }) => {
         <small style={{color: '#ff766c'}}>{err.newPassword && err.newPassword}</small>
         </div>
         <div className="d-flex justify-content-end mt-5">
-          <button onClick={e => setUpdateMode('')} type="button" className="px-3 mx-3 btn btn-warning">Cancel</button>
-          <button disabled={success || (password === '' || newPassword === '')} type="submit" className='px-3 mx-3 btn btn-info'>Update</button>
+          <button onClick={e => setUpdateMode('')} type="button" className="px-4 mx-3 btn btn-warning btn-lg">Cancel</button>
+          <button
+            disabled={success || (password === '' || newPassword === '')}
+            type="submit"
+            className='px-4 mx-3 btn btn-info btn-lg'>
+            <span>Update {loading ? <i className="bx bx-loader-circle bx-spin"></i>: ''}</span>
+          </button>
         </div>
       </form>
     </div>

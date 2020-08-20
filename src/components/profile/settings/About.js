@@ -3,6 +3,10 @@ import ContentLayout from '../ContentLayout'
 import {UserContext} from '../../../contexts/UserContext'
 import UpdateInfo from './UpdateInfo'
 import UpdatePassword from './UpdatePassword'
+import LoaderCircle from '../../loaders/LoaderCircle'
+import Info from './Info'
+import InfoAction from './InfoAction'
+
 
 const About = (props) => {
   const { profile } = useContext(UserContext)
@@ -31,23 +35,20 @@ const About = (props) => {
   return(
     <ContentLayout>
       <div className="row mx-0">
-        {profile && <div className="col-md-10 col-lg-8 row mx-0 text-light p-4 shadow rounded" style={{minHeight: '300px',background: '#41606E'}}>
-
-          {!updateMode && <div className="info col-7 pt-5">
-            <h2><i style={{fontSize:'15px'}} className="bx bx-user mx-2 text-warning"></i>{profile.name}</h2>
-            <p><i style={{fontSize:'15px'}} className="bx bx-envelope mx-2 text-warning"></i>{profile.email}</p>
-          </div>}
-          {updateMode === 'info' && <UpdateInfo setUpdateMode={updateURL} profile={profile}/>}
-          {updateMode === 'password' && <UpdatePassword setUpdateMode={updateURL} />}
-
-          <div className="col-5 border-left border-secondary">
-            <ul className="nav flex-column text-warning" style={{fontSize:'14px'}}>
-              <li onClick={e => updateURL('info')} className="nav-item"><p className="mb-0 nav-link pointer">Update Info</p></li>
-              <li onClick={e => updateURL('password')} className="nav-item"><p className="mb-0 nav-link pointer">Change Password</p></li>
-            </ul>
-          </div>
-
-        </div>}
+        {profile ?
+          <div className="col-md-10 col-lg-8 text-light p-4 shadow rounded" style={{minHeight: '300px',background: '#41606E'}}>
+            <div className="row mx-0">
+              {!updateMode && <Info {...profile} />}
+              {updateMode === 'info' && <UpdateInfo setUpdateMode={updateURL} profile={profile}/>}
+              {updateMode === 'password' && <UpdatePassword setUpdateMode={updateURL} />}
+              <InfoAction updateURL={updateURL}/>
+            </div>
+          </div>:
+          <LoaderCircle
+            classes="col-md-10 col-lg-8 text-light"
+            style={{minHeight: '300px',background: '#41606E'}}
+          />
+        }
       </div>
     </ContentLayout>
   )

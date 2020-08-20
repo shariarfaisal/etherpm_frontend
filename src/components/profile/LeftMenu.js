@@ -1,6 +1,8 @@
 import React,{ useContext } from 'react'
 import styled from 'styled-components'
 import { UserContext } from '../../contexts/UserContext'
+import LoaderCircle from '../loaders/LoaderCircle'
+
 
 const items = [
   {id: 1,name: 'Wallet',icon: 'bx bx-wallet-alt',title: 'Wallet'},
@@ -12,8 +14,8 @@ const items = [
 ]
 
 
+
 const ListItem = ({ name, title, page, setPage, icon}) => {
-  console.log(page,name);
   return(
     <li onClick={e => setPage(name)} className="nav-item">
       <p className={`nav-link ${page === name ? 'active': ''}`}>
@@ -25,13 +27,19 @@ const ListItem = ({ name, title, page, setPage, icon}) => {
 
 const LeftMenu = ({ setPage, page }) => {
   const { profile } = useContext(UserContext)
+
   return(
     <Styling className="col-3" style={{minHeight: '500px',background: '#41606E',position: 'relative'}}>
-      <div className="row align-items-center" style={{minHeight: '500px',position: 'absolute'}}>
-        {profile && <div  style={{background: 'rgb(51, 80, 94)'}} className="col-12 text-light py-2">
-          <h3 className="mb-0">{profile.name}</h3>
-          <small className="">{profile.email}</small>
-        </div>}
+      <div className="row align-items-center w-100" style={{minHeight: '500px',position: 'absolute'}}>
+        <div  style={{background: 'rgb(51, 80, 94)',height: '58px'}} className='col-12 text-light py-2'>
+          {profile ?
+            <div>
+              <h3 className="mb-0">{profile.name}</h3>
+              <small className="">{profile.email}</small>
+            </div>:
+            <LoaderCircle />
+          }
+        </div>
         <ul className="col-12 nav flex-column px-3 px-lg-5 w-100">
           {items.map(i => <ListItem key={i.id} page={page} {...i} setPage={setPage}/>)}
         </ul>

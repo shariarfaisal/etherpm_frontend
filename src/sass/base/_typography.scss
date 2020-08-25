@@ -2,6 +2,14 @@ $font-lato: 'Lato', sans-serif;
 $font-nunito: 'Nunito', sans-serif;
 $font-ubuntu: 'Ubuntu', sans-serif;
 
+$color1: #41606E;
+$color2: #2C4653;
+$color3: #1f313a;
+
+.color1{ background: $color1;}
+.color2{ background: $color2;}
+.color3{ background: $color3;}
+
 *{
   margin: 0;
   padding: 0;

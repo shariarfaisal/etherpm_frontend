@@ -1,4 +1,5 @@
 import React,{ createContext, useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -7,6 +8,7 @@ export const UserContext = createContext()
 
 const UserContextProvider = ({ children }) => {
   const [profile,setProfile] = useState(null)
+  const history = useHistory()
 
   const signup = async (payloads) => {
     let [data,error] = [null,null]
@@ -35,7 +37,8 @@ const UserContextProvider = ({ children }) => {
       const get = await axios.get(`/api/user/profile`)
       setProfile(get.data.data)
     }catch(err){
-      console.log(err.response.data);
+      localStorage.removeItem('etherpm_user_token')
+      history.push('/login')
     }
   }
 

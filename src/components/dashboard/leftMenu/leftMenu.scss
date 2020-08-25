@@ -1,0 +1,37 @@
+
+.left-menu{
+  font-family: 'ubuntu',sans-serif;
+  color: #ffffff;
+  position: relative;
+
+  .header{
+    padding: 10px;
+  }
+
+  .menu{
+    padding: 20px 0;
+    font-size: 16px;
+    .nav-link{
+      cursor: pointer;
+      color: #ffffff !important;
+      &:hover{
+        color: #c7c7c7 !important;
+      }
+    }
+
+    .active{
+      background: #2c4653;
+      color: #c7c7c7 !important;
+      border-left: 5px solid #7c9aa9;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+      cursor: default;
+    }
+
+    .sub-menu{
+      background: inherit;
+      margin-left: 20px;
+      font-size: 13px;
+    }
+
+  }
+}

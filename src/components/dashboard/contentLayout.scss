@@ -1,0 +1,46 @@
+
+.content-layout{
+  font-family: 'ubuntu',sans-serif;
+  height: 100vh;
+  position: relative;
+
+  .breadcrumb{
+    color: #ffffff;
+    position: absolute;
+    height: 40px;
+    margin-bottom: 0px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+    .breadcrumb-item{
+      font-size: 13px;
+      a{
+        color: #ffffff;
+      }
+      &.active{
+        color: #ffeb3bdb !important;
+      }
+    }
+  }
+
+  .content-wrapper{
+    padding-top: 40px;
+    height: 100vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      background: grey;
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f7f7f7;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #607D8B;
+    }
+  }
+}

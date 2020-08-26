@@ -1,12 +1,12 @@
 import React from 'react'
-import Layout from '../components/layout/Layout'
-import Info from '../components/profile/Info'
+import DashboardLayout from '../components/DashboardLayout'
+import ProfileBody from '../components/profile/Profile'
 
 const Profile = (props) => {
   return(
-    <Layout>
-      <Info />
-    </Layout>
+    <DashboardLayout>
+        <ProfileBody />
+    </DashboardLayout>
   )
 }
 export default Profile

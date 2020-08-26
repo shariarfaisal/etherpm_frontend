@@ -1,47 +1,26 @@
-import React,{ useState, useEffect } from 'react'
-import LeftMenu from './LeftMenu'
-import OrderManagement from './orderManagement/OrderManagement'
-import Wallet from './wallet/Wallet'
-import Trades from './trades/Trades'
-import TransactionHistory from './transactionHistory/TransactionHistory'
-import About from './settings/About'
+import React from 'react'
 
-const pages = ['Wallet','Trades','OrderManagement','TransactionHistory','InviteFriends','Settings','Refferal']
-
-const Info = (props) => {
-  const [page,setPage] = useState('')
-
-  useEffect(() => {
-    const tab = new URL(document.location).searchParams.get('tab')
-    if(tab){
-      const p = pages.find(i => i.toLowerCase() === tab.toLowerCase())
-      setPage(p)
-    }else{
-      changeURL(pages[0])
-    }
-  },[])
-
-  const changeURL = (page) => {
-    const url = new URL(document.location)
-    url.searchParams.set('tab',page)
-    setPage(page)
-    window.history.pushState({},null,url.href)
-    window.scrollTo(0,0)
-  }
-
-  return(
-    <div className="profile" style={{fontFamily: 'ubuntu'}}>
-      <div className="wrapper" style={{minHeight: '500px'}}>
-        <div className="row mx-0 justify-content-between" style={{background: 'rgb(51 80 94)'}}>
-          <LeftMenu page={page} setPage={changeURL}/>
-          {page === 'Wallet' && <Wallet />}
-          {page === 'OrderManagement' && <OrderManagement />}
-          {page === 'Trades' && <Trades />}
-          {page === 'TransactionHistory' && <TransactionHistory />}
-          {page === 'Settings' && <About />}
-        </div>
+const Info = ({ name, username, email, contact, _id }) => {
+  return (
+    <div className="info">
+      <div className="d-flex my-2 py-2">
+        <span className="w-50">Name: </span>
+        <span className="w-50">{name}</span>
+      </div>
+      <div className="d-flex my-2 py-2">
+        <span className="w-50">Username: </span>
+        <span className="w-50">{username}</span>
+      </div>
+      <div className="d-flex my-2 py-2">
+        <span className="w-50">Email: </span>
+        <span className="w-50">{email}</span>
+      </div>
+      <div className="d-flex my-2 py-2">
+        <span className="w-50">Contact: </span>
+        <span className="w-50">{contact}</span>
       </div>
     </div>
   )
 }
+
 export default Info

@@ -1,67 +1,105 @@
-import React from 'react'
-import styled from 'styled-components'
-import LoginForm from './LoginForm'
-
+import React,{ useState, useContext, useEffect } from 'react'
+import './login.scss'
+import { AdminContext } from '../contexts/AdminContext'
 
 const Login = (props) => {
+  const [username,setUsername] = useState('')
+  const [password,setPassword] = useState('')
+  const [remember,setRemember] = useState(false)
+  const [err, setErr] = useState('')
+  const [success,setSuccess] = useState('')
+  const [loading,setLoading] = useState(false)
+
+  const { getLogin } = useContext(AdminContext)
+
+  const submitHandler = async e => {
+    e.preventDefault()
+    setLoading(true)
+    const { data, error } = await getLogin({ username, password })
+    if(data){
+      setLoading(false)
+      setSuccess('Login Successful.')
+      localStorage.setItem('etherpm_admin_token',data)
+      console.log(data);
+      setTimeout(() => {
+        window.location = '/'
+      },1000)
+    }else if(error){
+      setLoading(false)
+      setErr(error)
+    }
+  }
+
+  const onChangeHandler = e => {
+    setSuccess('')
+    setErr('')
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem('etherpm_admin_token')
+    if(token){
+      window.location = '/'
+    }
+  },[])
 
   return(
-    <LoginStyle className="login">
-      <div className="wrapper">
-        <div className="row justify-content-center align-items-center mx-0">
+    <div className="login-components">
+      <div className="row mx-0 w-100 h-100 justify-content-center align-content-center">
 
-          <LoginForm />
+        <div className={`login-card col-md-8 col-lg-5 col-xl-4 shadow`}>
+          {/* Loading bar */}
+          {loading && <div className="btn-loading" style={{height: '5px',position: 'absolute',top: '0px',left: '0px'}}></div>}
 
+          <h2 className="title">Admin Login</h2>
+          <form onChange={onChangeHandler} onSubmit={submitHandler} className="form">
+            <small style={{height: '30px'}} className={`text-${success? 'success': err.msg? 'danger': 'light'} py-3 text-center d-block`}>
+              {success && success}
+              {err.msg && err.msg}
+            </small>
+            <div className="form-group">
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                className="form-control"
+                id="username"
+                value={username}
+                onChange={e => setUsername(e.target.value)}
+                placeholder="Username"
+                required
+              />
+              {err.username && <small className="text-danger">{err.username}</small>}
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                placeholder="Password"
+                required
+              />
+              {err.password && <small className="text-danger">{err.password}</small>}
+            </div>
+            <div className="">
+              <input
+                type="checkbox"
+                value={remember}
+                onChange={e => setRemember(!remember)}
+                className="ml-2"
+                id="rememberme"
+              />
+              <label className="form-check-label ml-3" htmlFor="rememberme">Remember me.</label>
+            </div>
+            <div className="py-3 d-flex justify-content-center">
+              <button disabled={loading} type="submit" className="btn btn-info px-4">Login <i className="bx bx-log-in"></i></button>
+            </div>
+          </form>
         </div>
+
       </div>
-    </LoginStyle>
+    </div>
   )
 }
-
-const LoginStyle = styled.div`
-  min-height: 88vh;
-  font-family: 'ubuntu',sans-sarif;
-  .form{
-    padding: 3rem 3rem 5rem 3rem;
-    margin: 8rem 0 5rem 0;
-    box-shadow: 0 2px 7px #c9c9c9;
-
-    label{
-      font-size: 1.2rem;
-    }
-
-    .foot{
-      font-size: 1.3rem;
-      .forgot{
-        cursor: pointer;
-        text-decoration: underline;
-
-        &:hover{
-          color: black;
-        }
-      }
-
-      .no-account span{
-        cursor: pointer;
-        &:hover{
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-  .form-control{
-    font-size: 1.5rem;
-    height: 4rem;
-    border-color: #e2e2e2d4;
-
-    &:focus{
-      box-shadow: none;
-      border-color: #00c5df !important;
-    }
-  }
-
-  .btn{
-    font-size: 1.7rem;
-  }
-`
 export default Login

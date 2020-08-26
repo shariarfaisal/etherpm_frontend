@@ -15,9 +15,6 @@ const tokenHandler = async (arg,token) => {
   }
 }
 
-const usetToken = localStorage.getItem('etherpm_user_token')
-if(usetToken) tokenHandler('etherpm_user_token',usetToken)
-
 const adminToken = localStorage.getItem('etherpm_admin_token')
 if(adminToken) tokenHandler('etherpm_admin_token',adminToken)
 

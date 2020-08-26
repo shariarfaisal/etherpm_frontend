@@ -1,12 +1,14 @@
 import React from 'react'
-import OuterLayout from '../components/layout/OuterLayout'
-import LoginBody from '../components/login/Login'
+import Body from '../components/login/Login'
+import AdminContextProvider from '../components/contexts/AdminContext'
 
 const Login = (props) => {
   return(
-    <OuterLayout>
-      <LoginBody />
-    </OuterLayout>
+    <AdminContextProvider>
+      <div className="login">
+        <Body />
+      </div>
+    </AdminContextProvider>
   )
 }
 export default Login

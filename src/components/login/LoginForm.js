@@ -25,7 +25,7 @@ const LoginForm = (props) => {
       setErr('')
       setSuccess('Login successfull!')
       setTimeout(() => {
-        localStorage.setItem('etherpm_user_token',data.token)
+        localStorage.setItem('x-user-token',data.token)
         window.location = '/profile'
       },1000)
     }

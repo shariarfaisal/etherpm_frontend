@@ -1,12 +1,12 @@
 import React,{ Fragment } from 'react'
 import { Link } from 'react-router-dom'
-const token = localStorage.getItem('etherpm_user_token')
+const token = localStorage.getItem('x-user-token')
 
 
 const RightUL = (props) => {
 
   const getSignout = e => {
-    localStorage.removeItem('etherpm_user_token')
+    localStorage.removeItem('x-user-token')
     window.location = '/'
   }
 

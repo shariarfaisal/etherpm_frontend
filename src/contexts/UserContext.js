@@ -63,7 +63,7 @@ const UserContextProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    const token = localStorage.getItem('etherpm_user_token')
+    const token = localStorage.getItem('x-user-token')
     if(token){
       getProfile()
     }

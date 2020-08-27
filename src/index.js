@@ -5,10 +5,10 @@ import './sass/style.scss'
 import axios from 'axios'
 
 const tokenHandler = async (token) => {
-  axios.defaults.headers.common['etherpm_user_token'] = token
+  axios.defaults.headers.common['x-user-token'] = token
 }
 
-const token = localStorage.getItem('etherpm_user_token')
+const token = localStorage.getItem('x-user-token')
 if(token){
   tokenHandler(token)
 }

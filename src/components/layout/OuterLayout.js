@@ -8,7 +8,7 @@ const OuterLayout = ({ children }) => {
     const history = useHistory()
 
     useEffect(() => {
-      const token = localStorage.getItem('etherpm_user_token')
+      const token = localStorage.getItem('x-user-token')
       if(token){
         history.push('/')
       }

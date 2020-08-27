@@ -5,7 +5,7 @@ import { DashboardContext } from '../contexts/DashboardContext'
 
 
 const getLogout = () => {
-  localStorage.removeItem('etherpm_admin_token')
+  localStorage.removeItem('x-admin-token')
   window.location = '/login'
 }
 

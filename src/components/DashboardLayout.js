@@ -10,7 +10,7 @@ const DashboardLayout = ({ children }) => {
   const history = useHistory()
 
   useEffect(() => {
-    const token = localStorage.getItem('etherpm_admin_token')
+    const token = localStorage.getItem('x-admin-token')
     if(!token){
       history.push('/login')
     }

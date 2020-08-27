@@ -36,7 +36,6 @@ const Admins = (props) => {
                   <div style={{width: '20%'}}>{admin.contact}</div>
                   <div style={{width: '15%'}}>
                     <Link to={`/admins/${admin._id}`} className="btn btn-info px-3 mx-2">view</Link>
-                    <button type="button" className="btn btn-warning px-3 mx-2">delete</button>
                   </div>
                 </div>
               ))

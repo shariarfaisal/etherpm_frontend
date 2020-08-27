@@ -33,8 +33,7 @@ const Consumers = (props) => {
                   <div style={{width: '25%'}}>{consumer.email}</div>
                   <div style={{width: '20%'}}>{consumer.refferalID? consumer.refferalID: '- - -'}</div>
                   <div style={{width: '20%'}}>
-                    <Link to={`/dashboard/consumers/${consumer._id}`} className="btn btn-info px-3 mx-2">view</Link>
-                    <button type="button" className="btn btn-warning px-3 mx-2">delete</button>
+                    <Link to={`/consumers/${consumer._id}`} className="btn btn-info px-3 mx-2">view</Link>
                   </div>
                 </div>
               ))

@@ -27,8 +27,7 @@ const AdminContextProvider = ({ children }) => {
         setProfile(get.data.data)
       }
     }catch(err){
-      console.log(err.response.data);
-      localStorage.removeItem('etherpm_admin_token')
+      localStorage.removeItem('x-admin-token')
       window.location = '/login'
     }
   }
@@ -85,7 +84,7 @@ const AdminContextProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    const token = localStorage.getItem('etherpm_admin_token')
+    const token = localStorage.getItem('x-admin-token')
     if(token){
       getProfile()
     }

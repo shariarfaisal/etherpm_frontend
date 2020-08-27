@@ -19,11 +19,12 @@ const Login = (props) => {
     if(data){
       setLoading(false)
       setSuccess('Login Successful.')
-      localStorage.setItem('etherpm_admin_token',data)
-      console.log(data);
+      localStorage.setItem('x-admin-token',data)
+      
       setTimeout(() => {
         window.location = '/'
       },1000)
+
     }else if(error){
       setLoading(false)
       setErr(error)
@@ -36,7 +37,7 @@ const Login = (props) => {
   }
 
   useEffect(() => {
-    const token = localStorage.getItem('etherpm_admin_token')
+    const token = localStorage.getItem('x-admin-token')
     if(token){
       window.location = '/'
     }

@@ -5,10 +5,10 @@ export const DashboardContext = createContext()
 
 const menuItems = [
   {id: 1,title: 'Home',icon: 'bx bx-home',link: '/',active: false},
-  {id:2, title: 'Consumer',icon: 'bx bx-user',link: '',active: false,items:[
+  {id:2, title: 'Consumer',icon: 'bx bx-user',link: '',active: true,items:[
     {subId: 1,title: 'All',icon: 'bx bx-list-ul',link: '/consumers',active: false}
   ]},
-  {id: 3,title: 'Admins',icon: 'bx bx-group',link: '',active: false,items:[
+  {id: 3,title: 'Admins',icon: 'bx bx-group',link: '',active: true,items:[
     {isubIdd: 1,title: 'All',icon: 'bx bx-list-ul',link: '/admins',active: false},
     {subId: 2,title: 'Profile',icon: 'bx bx-user',link: '/profile',active: false},
   ]},
@@ -68,10 +68,10 @@ const DashboardContextProvider = ({ children }) => {
       }
     }
 
-    const item = findItem(menu)
-    if(item){
-      makeActive(item)
-    }
+    // const item = findItem(menu)
+    // if(item){
+    //   makeActive(item)
+    // }
   },[])
 
 

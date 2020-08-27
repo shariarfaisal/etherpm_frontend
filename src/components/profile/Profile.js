@@ -9,7 +9,7 @@ import './profile.scss'
 
 const Profile = (props) => {
   const [updateMode,setUpdateMode] = useState(false)
-  const [passwordMode,setPasswordMode] = useState(true)
+  const [passwordMode,setPasswordMode] = useState(false)
   const { profile } = useContext(AdminContext)
 
   return(

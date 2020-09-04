@@ -1,6 +1,6 @@
 import React,{ memo } from 'react'
 
-const Input = ({ label, value, setValue, id, plc, type= 'text', note, required=true }) => {
+const Input = ({ label, value, setValue, id, plc, type= 'text', note, required=true, error }) => {
   return (
     <div className="item">
       <label htmlFor={id}>{label}</label>
@@ -14,7 +14,8 @@ const Input = ({ label, value, setValue, id, plc, type= 'text', note, required=t
         placeholder={plc}
         required={required}
       />
-    <span className="item-msg">{note && note}</span>
+      {!error &&<span className="item-msg">{note && note}</span>}
+      {error && <span className="item-msg text-danger">{error}</span>}
     </div>
   )
 }

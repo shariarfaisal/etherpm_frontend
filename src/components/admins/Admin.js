@@ -28,14 +28,14 @@ const Admin = (props) => {
       <div className="admin-page row mx-0">
         <div className="col-md-10 col-lg-8 shadow p-5 m-5 text-light color3"  style={{minHeight: '200px'}}>
 
-          {/* Loading spinner */}
-          {!admin && !error &&
-            <div className="d-flex w-100 h-100 align-items-center justify-content-center">
-              <i className="bx bx-loader-circle bx-md bx-spin"></i>
-            </div>
-          }
 
+          {!admin && !error && <div>loading...</div>}
           { admin && <ProfileInfo {...admin} />}
+          {error && <div className="d-flex w-100 h-100 justify-content-center align-items-center">
+            <h1>Not Found</h1>
+          </div>}
+
+
         </div>
       </div>
     </ContentLayout>

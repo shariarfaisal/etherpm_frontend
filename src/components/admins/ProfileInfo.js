@@ -1,7 +1,7 @@
 import React from 'react'
 
 const InfoItem = ({ title, name }) => (
-  <div className="d-flex px-2 border-bottom border-secondary my-2">
+  <div className="d-flex px-2 my-2">
     <span className="w-50">{title}</span>
     <span className="w-50">{name}</span>
   </div>

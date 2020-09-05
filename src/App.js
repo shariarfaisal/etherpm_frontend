@@ -6,6 +6,8 @@ import Admin from './pages/Admin'
 import Profile from './pages/Profile'
 import Consumer from './pages/Consumer'
 import Login from './pages/Login'
+import TokenListings from './pages/TokenListings'
+import TokenListing from './pages/TokenListing'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 let pages = [
@@ -15,7 +17,9 @@ let pages = [
   {id: 3,path: '/profile',component: Profile},
   {id: 4,path: '/consumers',component: Consumers},
   {id: 5,path: '/consumers/:consumerID',component: Consumer},
-  {id: 6,path: '/login',component: Login}
+  {id: 6,path: '/token-listings',component: TokenListings},
+  {id: 7,path: '/token-listings/:id',component: TokenListing},
+  {id: 8,path: '/login',component: Login}
 ]
 
 

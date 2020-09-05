@@ -12,16 +12,18 @@ const PasswordUpdateForm = ({ setPasswordMode }) => {
   const submitHandler = async e => {
     e.preventDefault()
     setLoading(true)
-    const { data, error } = await passwordUpdate({ password, newPassword })
-    if(data){
-      setLoading(false)
-      setError('')
-      setSuccess('Password updated!')
-      setPassword('')
-      setNewPassword('')
-    }else if(error){
-      setLoading(false)
-      setError(error)
+    if(password && newPassword){
+      const { data, error } = await passwordUpdate({ password, newPassword })
+      if(data){
+        setLoading(false)
+        setError('')
+        setSuccess('Password updated!')
+        setPassword('')
+        setNewPassword('')
+      }else if(error){
+        setLoading(false)
+        setError(error)
+      }
     }
   }
 
@@ -62,7 +64,7 @@ const PasswordUpdateForm = ({ setPasswordMode }) => {
         </div>
         <div className="my-2 py-2 d-flex justify-content-end">
           <button onClick={e => setPasswordMode(false)} type="button" className="btn btn-warning px-3 my-2 mx-3">Cancel</button>
-            <button disabled={loading} type="submit" className={`btn btn-${success? 'success': 'info'} px-3 my-2 mx-3`}>
+            <button disabled={loading | (!password | !newPassword)} type="submit" className={`btn btn-${success? 'success': 'info'} px-3 my-2 mx-3`}>
               {success ? 'Updated' : 'Update'}
               {loading && <i className="bx bx-loader-circle bx-spin px-3"></i> }
             </button>

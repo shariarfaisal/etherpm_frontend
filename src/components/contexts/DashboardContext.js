@@ -12,6 +12,7 @@ const menuItems = [
     {isubIdd: 1,title: 'All',icon: 'bx bx-list-ul',link: '/admins',active: false},
     {subId: 2,title: 'Profile',icon: 'bx bx-user',link: '/profile',active: false},
   ]},
+  {id: 3,title: 'Token Listings',icon: 'bx bx-group',link: '/token-listings',active: false},
 ]
 
 const DashboardContextProvider = ({ children }) => {

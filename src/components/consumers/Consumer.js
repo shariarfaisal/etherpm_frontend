@@ -4,6 +4,19 @@ import { ConsumerContext } from '../contexts/ConsumerContext'
 import ContentLayout from '../ContentLayout'
 
 
+const Info = ({ name, email }) => (
+  <div>
+    <div className="d-flex">
+      <span className="w-50">Name</span>
+      <span className="w-50">{name}</span>
+    </div>
+    <div className="d-flex">
+      <span className="w-50">Email</span>
+      <span className="w-50">{email}</span>
+    </div>
+  </div>
+)
+
 const Consumer = (props) => {
   const { consumerID } = useParams()
   const { getConsumer } = useContext(ConsumerContext)
@@ -28,16 +41,14 @@ const Consumer = (props) => {
   return(
     <ContentLayout>
       <div className="row mx-0">
-        {consumer && <div className="col-xl-8 m-5 text-light shadow color3 p-5"  style={{fontSize: '13px',minHeight: '200px'}}>
-          <div className="d-flex">
-            <span className="w-50">Name</span>
-            <span className="w-50">{consumer.name}</span>
-          </div>
-          <div className="d-flex">
-            <span className="w-50">Email</span>
-            <span className="w-50">{consumer.email}</span>
-          </div>
-        </div>}
+        <div className="col-xl-8 m-5 text-light shadow color3 p-5"  style={{fontSize: '13px',minHeight: '200px'}}>
+
+          {!consumer && !error && <div className="">loading...</div>}
+          {consumer && <Info {...consumer} />}
+          {error && <div className="w-100 h-100 flex-center"><h1>Not Found</h1></div>}
+
+          
+        </div>
       </div>
     </ContentLayout>
   )

@@ -1,14 +1,10 @@
-import React,{ Fragment } from 'react'
+import React,{ Fragment, useContext } from 'react'
 import { Link } from 'react-router-dom'
-const token = localStorage.getItem('x-user-token')
+import { BaseContext } from '../../../contexts/BaseContext'
 
 
 const RightUL = (props) => {
-
-  const getSignout = e => {
-    localStorage.removeItem('x-user-token')
-    window.location = '/'
-  }
+  const { getSignout, token } = useContext(BaseContext)
 
   return(
     <ul className="navbar-nav ml-auto">

@@ -2,7 +2,7 @@ import React,{ useState, useContext } from 'react'
 import { UserContext } from '../../../contexts/UserContext'
 
 const UpdatePassword = ({ setUpdateMode }) => {
-  const [password,setPassword] = useState('')
+  const [oldPassword,setOldPassword] = useState('')
   const [newPassword,setNewPassword] = useState('')
   const [err,setErr] = useState('')
   const [success,setSuccess] = useState('')
@@ -12,16 +12,18 @@ const UpdatePassword = ({ setUpdateMode }) => {
   const submitHandler = async e => {
     e.preventDefault()
     setLoading(true)
-    const { error, data } = await getUpdatePassword({ password, newPassword})
-    if(error){
-      setLoading(false)
-      setErr(error)
-    }else if(data){
-      setLoading(false)
-      setSuccess('Password updated!')
-      setPassword('')
+    const done = await getUpdatePassword({
+      payloads: { oldPassword, newPassword},
+      setSuccess,
+      setError: setErr,
+      setLoading
+    })
+
+    if(done){
+      setOldPassword('')
       setNewPassword('')
     }
+
   }
 
   const formOnChange = e => {
@@ -39,18 +41,18 @@ const UpdatePassword = ({ setUpdateMode }) => {
           <span className="text-center d-block py-2" style={{color: '#00de00',fontSize: '13px'}}>{success}</span>
         </div>}
         <div className="form-group">
-          <label htmlFor="password">Old Password</label>
+          <label htmlFor="oldPassword">Old Password</label>
           <input
             className="form-control"
             type="password"
-            id="password"
-            placeholder="Password"
+            id="oldPassword"
+            placeholder="Old Password"
             required
-            value={password}
-            onChange={e => setPassword(e.target.value)}
+            value={oldPassword}
+            onChange={e => setOldPassword(e.target.value)}
             style={{fontSize: '14px'}}
           />
-        <small style={{color: '#ff766c'}}>{err.password && err.password}</small>
+        <small style={{color: '#ff766c'}}>{err.oldPassword && err.oldPassword}</small>
         </div>
         <div className="form-group">
           <label htmlFor="newPassword">New Password</label>
@@ -75,7 +77,7 @@ const UpdatePassword = ({ setUpdateMode }) => {
         <div className="d-flex justify-content-end mt-5">
           <button onClick={e => setUpdateMode('')} type="button" className="px-4 mx-3 btn btn-warning btn-lg">Cancel</button>
           <button
-            disabled={success || (password === '' || newPassword === '')}
+            disabled={success || (oldPassword === '' || newPassword === '')}
             type="submit"
             className='px-4 mx-3 btn btn-info btn-lg'>
             <span>Update {loading ? <i className="bx bx-loader-circle bx-spin"></i>: ''}</span>

@@ -13,15 +13,12 @@ const UpdateInfo = ({ profile, setUpdateMode }) => {
   const submitHandler = async e => {
     e.preventDefault()
     setLoading(true)
-    const { error, data } = await getUpdateInfo({ name, email})
-    if(error){
-      setLoading(false)
-      console.log(error);
-      setErr(error)
-    }else if(data){
-      setLoading(false)
-      setSuccess('Data updated successfully!')
-    }
+    getUpdateInfo({
+      payloads: {email,name},
+      setError: setErr,
+      setSuccess,
+      setLoading
+    })
   }
 
   const formOnChange = e => {

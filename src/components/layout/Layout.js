@@ -5,7 +5,7 @@ import FooterBox from './footerBox/FooterBox'
 import Footer from './Footer'
 import { useHistory } from 'react-router-dom'
 import UserContextProvider from '../../contexts/UserContext'
-
+import './layout.scss'
 
 const Layout = ({ children }) => {
   const { location } = useHistory()

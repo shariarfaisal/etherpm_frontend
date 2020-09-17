@@ -1,80 +1,62 @@
-import React,{ createContext, useState, useEffect } from 'react'
+import React,{ createContext, useContext } from 'react'
+import { BaseContext } from './BaseContext'
 import axios from 'axios'
-
 
 export const UserContext = createContext()
 
 
 const UserContextProvider = ({ children }) => {
-  const [profile,setProfile] = useState(null)
+  const { token, profile, setProfile } = useContext(BaseContext)
 
-  const signup = async (payloads) => {
-    let [data,error] = [null,null]
+  const getUpdateInfo = async ({
+    payloads,
+    setError,
+    setSuccess,
+    setLoading
+  }) => {
     try{
-      const res = await axios.post(`/api/user/register`,payloads)
-      data = res.data
+      const res = await axios.put(`/user/profile`,payloads)
+      if(res.data){
+        setLoading(false)
+        setError('')
+        setSuccess('Data has been updated.')
+        setProfile({...res.data})
+      }
     }catch(err){
-      error = err.response.data.error
-    }
-    return { data, error }
-  }
-
-  const login = async (payloads) => {
-    let [data,error] = [null,null]
-    try{
-      const res = await axios.post(`/api/user/login`,payloads)
-      data = res.data
-    }catch(err){
-      error = err.response.data.error
-    }
-    return { data, error }
-  }
-
-  const getProfile = async () => {
-    try{
-      const get = await axios.get(`/api/user/profile`)
-      setProfile(get.data.data)
-    }catch(err){
-      console.log(err.response.data);
+      setLoading(false)
+      if(err.response.status === 400){
+        setError(err.response.data.errors)
+      }
     }
   }
 
-  const getUpdateInfo = async (payloads) => {
-    let [data,error] = [null,null]
+  const getUpdatePassword = async ({
+    payloads,
+    setSuccess,
+    setError,
+    setLoading
+  }) => {
     try{
-      const res = await axios.put(`/api/user/profile`,payloads)
-      data = res.data
-      setProfile({...res.data.data})
+      const res = await axios.put(`/user/password`,payloads)
+      if(res.data){
+        setLoading(false)
+        setSuccess('Password updated.')
+        return true
+      }
     }catch(err){
-      error = err.response.data.error
+      setLoading(false)
+      if(err.response.status === 400){
+        setError(err.response.data.errors)
+      }
+      return false
+      // FIXME: 500 error code handling ...
     }
-    return { data, error }
   }
-
-  const getUpdatePassword = async (payloads) => {
-    let [data,error] = [null,null]
-    try{
-      const res = await axios.put(`/api/user/password`,payloads)
-      data = res.data
-    }catch(err){
-      error = err.response.data.error
-    }
-    return { data, error }
-  }
-
-  useEffect(() => {
-    const token = localStorage.getItem('x-user-token')
-    if(token){
-      getProfile()
-    }
-  },[])
 
   return(
     <UserContext.Provider value={{
-      signup,
-      login,
-      getProfile,
       profile,
+      token,
       getUpdateInfo,
       getUpdatePassword
     }}>

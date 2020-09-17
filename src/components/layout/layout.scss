@@ -1,0 +1,23 @@
+
+.intro{
+  margin-top: -8rem;
+  color: #ffffff;
+  height: 500px;
+  background: #131313;
+  font-family: 'ubuntu',sans-serif;
+
+  &-item{
+    height: 100%;
+
+    .content{
+      font-family: monospace;
+      .title{
+        font-size: 3rem;
+      }
+      .quote{
+        font-size: 1.8rem;
+        color: #ffffff;
+      }
+    }
+  }
+}

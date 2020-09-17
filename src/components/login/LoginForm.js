@@ -1,11 +1,11 @@
 import React,{ useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { UserContext } from '../../contexts/UserContext'
+import { BaseContext } from '../../contexts/BaseContext'
 
 
 
 const LoginForm = (props) => {
-  const { login } = useContext(UserContext)
+  const { getSignin } = useContext(BaseContext)
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
   const [err,setErr] = useState('')
@@ -15,20 +15,14 @@ const LoginForm = (props) => {
   const submitHandler = async (e) => {
     e.preventDefault()
     setLoading(true)
-    const { data, error } = await login({email,password})
-    if(error){
-      setErr(error)
-      setLoading(false)
-    }
-    else if(data){
-      setLoading(false)
-      setErr('')
-      setSuccess('Login successfull!')
-      setTimeout(() => {
-        localStorage.setItem('x-user-token',data.token)
-        window.location = '/profile'
-      },1000)
-    }
+
+    await getSignin({
+      payloads:{ email, password},
+      setSuccess,
+      setError: setErr,
+      setLoading
+    })
+
   }
 
   return(
@@ -36,7 +30,7 @@ const LoginForm = (props) => {
       <h2 className="text-center py-2">Log In</h2>
       {/* Messages */}
       <small className={`d-block text-center text-${err ? 'danger': 'success'}`} style={{height: '22px'}}>
-        {err && err}
+        {err && err.message && err.message}
         {success && success}
       </small>
 
@@ -51,6 +45,7 @@ const LoginForm = (props) => {
           type="email"
           placeholder="Email"
         />
+        <small className="text-danger">{err && err.email && err.email}</small>
       </div>
       <div className="form-group">
         <label htmlFor="password">Password</label>
@@ -63,6 +58,7 @@ const LoginForm = (props) => {
           type="password"
           placeholder="Password"
         />
+      <small className="text-danger">{err && err.password && err.password}</small>
       </div>
       <div>
         <button disabled={loading} className="btn btn-lg btn-block btn-info" type="submit">Log In <i className="bx bx-log-in"></i></button>

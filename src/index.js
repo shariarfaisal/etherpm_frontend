@@ -4,11 +4,13 @@ import App from './App';
 import './sass/style.scss'
 import axios from 'axios'
 
+axios.defaults.baseURL = 'http://localhost:3000/'
+
 const tokenHandler = async (token) => {
-  axios.defaults.headers.common['x-user-token'] = token
+  axios.defaults.headers.common['Authorization'] = "Bearer " + token
 }
 
-const token = localStorage.getItem('x-user-token')
+const token = localStorage.getItem('Authorization')
 if(token){
   tokenHandler(token)
 }

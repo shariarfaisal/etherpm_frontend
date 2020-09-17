@@ -1,7 +1,4 @@
-import React,{ useContext } from 'react'
-import styled from 'styled-components'
-import { UserContext } from '../../contexts/UserContext'
-import LoaderCircle from '../loaders/LoaderCircle'
+import React from 'react'
 
 
 const items = [
@@ -25,47 +22,27 @@ const ListItem = ({ name, title, page, setPage, icon}) => {
   )
 }
 
-const LeftMenu = ({ setPage, page }) => {
-  const { profile } = useContext(UserContext)
+const LeftMenu = ({ setPage, page, profile }) => {
 
   return(
-    <Styling className="col-3" style={{minHeight: '500px',background: '#41606E',position: 'relative'}}>
-      <div className="row align-items-center w-100" style={{minHeight: '500px',position: 'absolute'}}>
-        <div  style={{background: 'rgb(51, 80, 94)',height: '58px'}} className='col-12 text-light py-2'>
-          {profile ?
-            <div>
-              <h3 className="mb-0">{profile.name}</h3>
-              <small className="">{profile.email}</small>
-            </div>:
-            <LoaderCircle />
-          }
+    <div className="col-3 left-menu">
+      <div className="row align-items-center w-100 left-menu-wrapper">
+
+        <div className='col-12 text-light py-2 item-1'>
+          <div>
+            <h3 className="mb-0">{profile.name}</h3>
+            <small className="">{profile.email}</small>
+          </div>
         </div>
-        <ul className="col-12 nav flex-column px-3 px-lg-5 w-100">
+
+        <ul className="col-12 nav flex-column px-3 px-lg-5 w-100 item-2">
           {items.map(i => <ListItem key={i.id} page={page} {...i} setPage={setPage}/>)}
         </ul>
+
       </div>
-    </Styling>
+    </div>
   )
 }
 
-const Styling = styled.div`
-  .nav-item{
-    .nav-link{
-      cursor: pointer;
-      color: #ffffff;
-      &:hover{
-        background: #33505f;
-        border-radius: 2px;
-        color: #f8f9fad1;
-      }
-    }
-
-    .active{
-      background: #33505f;
-      border-radius: 2px;
-      color: #f8f9fad1;
-    }
-  }
-`
 
 export default LeftMenu

@@ -1,9 +1,9 @@
 import React,{ useState, useContext } from 'react'
-import { Link, useHistory } from 'react-router-dom'
-import { UserContext } from '../../contexts/UserContext'
+import { Link } from 'react-router-dom'
+import { BaseContext } from '../../contexts/BaseContext'
 
 const SignupForm = (props) => {
-  const { signup } = useContext(UserContext)
+  const { getSignup } = useContext(BaseContext)
   const [name,setName] = useState('')
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
@@ -13,7 +13,6 @@ const SignupForm = (props) => {
   const [errors,setErrors] = useState('')
   const [success,setSuccess] = useState('')
   const [loading,setLoading] = useState(false)
-  const history = useHistory()
 
   const submitHandler = async e => {
     setErrors('')
@@ -23,15 +22,13 @@ const SignupForm = (props) => {
       setLoading(false)
       setErrors({ agreement: 'Agreement mush have to be checked!'})
     }else{
-      setLoading(false)
-      const { data, error } = await signup({name,email,password,refferalID})
-      if(error) setErrors(error)
-      else if(data){
-        setSuccess('Account created!')
-        setTimeout(() => {
-          history.push('/login')
-        },1000)
-      }
+      setLoading(false);
+       getSignup({
+         payloads: {name,email,password,refferalID},
+         setSuccess,
+         setError: setErrors,
+         setLoading
+       })
     }
   }
 

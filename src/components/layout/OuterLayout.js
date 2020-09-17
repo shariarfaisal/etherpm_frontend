@@ -1,14 +1,15 @@
-import React,{ useEffect } from 'react'
+import React,{ Fragment, useEffect, useContext } from 'react'
 import Header from './header/Header'
 import Footer from './Footer'
 import { useHistory } from 'react-router-dom'
-import UserContextProvider from '../../contexts/UserContext'
+import { BaseContext } from '../../contexts/BaseContext'
+
 
 const OuterLayout = ({ children }) => {
     const history = useHistory()
+    const { token } = useContext(BaseContext)
 
     useEffect(() => {
-      const token = localStorage.getItem('x-user-token')
       if(token){
         history.push('/')
       }
@@ -16,11 +17,11 @@ const OuterLayout = ({ children }) => {
 
 
   return(
-    <UserContextProvider>
+    <Fragment>
       <Header leftul="false" />
         { children }
       <Footer />
-    </UserContextProvider>
+    </Fragment>
   )
 }
 export default OuterLayout

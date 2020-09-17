@@ -10,10 +10,13 @@ const TokenListingContextProvider = ({ children }) => {
   const createTokenListing = async (payloads) => {
     let [data,error] = [null, null]
     try{
-      const create = await axios.post('/api/token-listing',payloads)
-      data = create.data.data
+      const create = await axios.post('/tokenlisting',payloads)
+      data = create.data
     }catch(err){
-      error = err.response.error.error
+      if(err.response.status === 400){
+        error = err.response.data.errors
+      }
+      // FIXME: Error handling ...
     }
     return { data, error }
   }

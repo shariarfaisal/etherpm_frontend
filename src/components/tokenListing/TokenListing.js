@@ -31,7 +31,7 @@ const TokenListing = (props) => {
   const onSubmitHandler = async e => {
     e.preventDefault()
     setLoading(true)
-    const { data, error: err } = createTokenListing({
+    const { data, error: err } = await createTokenListing({
       email, name, position, tokenName, symbol, tokenDecimal, tokenContract, websiteLink, description, logoLink, exchanges, twitter, telegram, chat, reddit, members, channel, refferedBy
     })
     if(data){
@@ -39,10 +39,10 @@ const TokenListing = (props) => {
       setError('')
       setSuccess("Token Listing submited.")
       setEmail('');setName('');setPosition();
-      setTokenName();setSymbol();setTokenDecimal();
-      setTokenContract();setWebsiteLink();setDescription();
-      setLogoLink();setExchanges();setTwitter();setTelegram();
-      setChat();setReddit();setMembers();setChannel();setRefferedBy();
+      setTokenName('');setSymbol('');setTokenDecimal('');
+      setTokenContract('');setWebsiteLink();setDescription('');
+      setLogoLink('');setExchanges('');setTwitter('');setTelegram('');
+      setChat('');setReddit('');setMembers('');setChannel('');setRefferedBy('');
       window.scrollTo(0,0)
     }else if(err){
       setLoading(false)

@@ -5,7 +5,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import TokenListing from './pages/TokenListing'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
+import BaseContextProvider from './contexts/BaseContext'
 
 let pages = [
   {id: 1,path: '/',component: Home},
@@ -18,11 +18,13 @@ let pages = [
 
 const App = (props) => {
   return(
-    <Router>
-      <Switch>
-        {pages.map(i => <Route key={i.id} path={i.path} exact component={i.component} />)}
-      </Switch>
-    </Router>
+    <BaseContextProvider>
+      <Router>
+        <Switch>
+          {pages.map(i => <Route key={i.id} path={i.path} exact component={i.component} />)}
+        </Switch>
+      </Router>
+    </BaseContextProvider>
   )
 }
 

@@ -1,0 +1,47 @@
+
+.profile{
+  font-family: 'ubuntu',sans-serif;
+
+  .wrapper{
+    background: #41606E;
+    min-height: 500px;
+  }
+
+  .left-menu{
+    min-height: 500px;
+    background: #41606E;
+    position: relative;
+    &-wrapper{
+      min-height: 500px;
+      position: absolute;
+
+      .item-1{
+        background: rgb(51, 80, 94);
+        height: 58px;
+      }
+
+      .nav-item{
+        .nav-link{
+          cursor: pointer;
+          color: #ffffff;
+          &:hover{
+            background: #33505f;
+            border-radius: 2px;
+            color: #f8f9fad1;
+          }
+        }
+
+        .active{
+          background: #33505f;
+          border-radius: 2px;
+          color: #f8f9fad1;
+        }
+      }
+
+    }
+
+  }
+
+
+
+}
